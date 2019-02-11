@@ -30,11 +30,12 @@ const create = () => {
 const validate = command => {
   const isDueDateInTheFuture = command.data.dueDate - Date.now() > 0
 
-  switch (command.name) {
-  case commands.addTask.name:
-    assert.ok(command.data.name.length(), 'Give me some name please!')
+  // FIXME use constants for command name matching
+  switch (command.action) {
+  case 'add-task':
+    assert.ok(command.data.name.length, 'Give me some name please!')
     break
-  case commands.changeTaskDueDate.name:
+  case 'change-task-due-date':
     assert.ok(isDueDateInTheFuture, 'Are you Marty McFly?!')
     break
   default:
@@ -46,10 +47,10 @@ const validate = command => {
 
 const handleCommand = store => command => {
   const currentState = store.getCurrentState()
-  const newEvents = aggregate.taskAggregate.execute(currentState)(command)
-  store.append(newEvents)
+  const newEvent = aggregate.taskAggregate.execute(currentState)(command)
+  store.append(newEvent)
 
-  return newEvents
+  return newEvent
 }
 
 const handle = store => command => pipe(
