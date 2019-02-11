@@ -12,7 +12,7 @@ const onlyIfTaskDoesNotAlreadyExists = state => id => {
 
 const onlyIfTaskExists = state => id => {
   const task = state.tasks.find(task => task.id === id)
-  assert.ok(task, 'Task does not exist')
+  assert.ok(task, 'Task does not exists')
 
   return task
 }
@@ -35,7 +35,7 @@ const execute = state => command => {
     ? onlyIfTaskExists(state)(command.data.id) && events.taskCompleted(command.data)
     : command.action === 'change-task-due-date'
     ? pipe(onlyIfTaskExists(state), onlyIfNotAlreadyFinished)(command.data.id) && events.taskDueDateChanged(command.data)
-    : assert.fail(command.action + ' - ' + commands.addTask.action)
+    : assert.fail('command not found')
 
   return event
 }
