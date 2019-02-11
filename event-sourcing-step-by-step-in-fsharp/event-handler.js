@@ -7,8 +7,11 @@ const addTask = state => event => {
   return {...state, tasks: state.tasks.concat(task)}
 }
 
-const removeTask = state => event =>
-  state.tasks.filter(task => task.id !== event.data.id)
+const removeTask = state => event => {
+  const newTasks = state.tasks.filter(task => task.id !== event.data.id)
+
+  return {...state, tasks: newTasks}
+}
 
 const clearAllTasks = state => ({...state, tasks: []})
 
