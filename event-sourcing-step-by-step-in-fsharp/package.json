@@ -4,8 +4,10 @@
   "description": "",
   "main": "application.js",
   "scripts": {
+    "lint": "xo",
     "start": "node application.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "npm run lint || true",
+    "test": "tape '{,!(node_modules)/**/}*.test.js' | faucet"
   },
   "keywords": [],
   "author": "",
