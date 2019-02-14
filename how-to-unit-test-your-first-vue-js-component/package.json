@@ -1,0 +1,43 @@
+{
+  "name": "how-to-unit-test-your-first-vue-js-component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.10.1",
+    "xo": "^0.24.0"
+  },
+  "xo": {
+    "space": true,
+    "semicolon": false,
+    "rules": {
+      "indent": [
+        "error",
+        2,
+        {
+          "ignoredNodes": [
+            "ConditionalExpression"
+          ]
+        }
+      ],
+      "operator-linebreak": [
+        "error",
+        "after",
+        {
+          "overrides": {
+            "?": "before",
+            ":": "before",
+            "||": "before"
+          }
+        }
+      ]
+    }
+  }
+}
