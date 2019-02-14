@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape **/*.test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.29",
     "faucet": "0.0.1",
     "tape": "^4.10.1",
     "xo": "^0.24.0"
