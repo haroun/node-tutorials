@@ -1,0 +1,44 @@
+{
+  "name": "event-sourcing-diy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "application.js",
+  "scripts": {
+    "start": "node application.js",
+    "test": "tape '{,!(node_modules)/**/}*.test.js' | faucet"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.10.1",
+    "xo": "^0.24.0"
+  },
+  "xo": {
+    "space": true,
+    "semicolon": false,
+    "rules": {
+      "indent": [
+        "error",
+        2,
+        {
+          "ignoredNodes": [
+            "ConditionalExpression"
+          ]
+        }
+      ],
+      "operator-linebreak": [
+        "error",
+        "after",
+        {
+          "overrides": {
+            "?": "before",
+            ":": "before",
+            "||": "before"
+          }
+        }
+      ]
+    }
+  }
+}
