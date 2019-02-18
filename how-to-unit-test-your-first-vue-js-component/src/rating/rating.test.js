@@ -1,6 +1,6 @@
-const test = require('tape')
-const {shallowMount} = require('@vue/test-utils')
-const rating = require('./rating')
+import test from 'tape'
+import {shallowMount} from '@vue/test-utils'
+import rating from './rating.vue'
 
 const setup = () => {
   const fixtures = {}
