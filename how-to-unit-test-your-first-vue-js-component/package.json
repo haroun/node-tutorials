@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test": "tape '{,!(node_modules)/**/}*.test.js' | faucet"
+    "test": "tape '{,!(node_modules)/**/}*.test.js' -r './test.setup.js' | faucet"
   },
   "dependencies": {
     "vue": "^2.5.22"
@@ -15,13 +15,19 @@
     "@vue/cli-plugin-babel": "^3.4.0",
     "@vue/cli-plugin-eslint": "^3.4.0",
     "@vue/cli-service": "^3.4.0",
+    "@vue/test-utils": "^1.0.0-beta.29",
     "babel-eslint": "^10.0.1",
+    "browser-env": "^3.2.5",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.5.21",
-    "@vue/test-utils": "^1.0.0-beta.29",
     "faucet": "0.0.1",
+    "jsdom": "^13.2.0",
+    "jsdom-global": "^3.0.2",
+    "require-extension-hooks": "^0.3.3",
+    "require-extension-hooks-babel": "^0.1.1",
+    "require-extension-hooks-vue": "^2.0.0",
     "tape": "^4.10.1",
+    "vue-template-compiler": "^2.5.21",
     "xo": "^0.24.0"
   },
   "eslintConfig": {
