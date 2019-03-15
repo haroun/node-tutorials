@@ -1,0 +1,46 @@
+{
+  "name": "event-sourcing-martin-fowler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "xo",
+    "postversion": "git push && git push --tags",
+    "test": "tape '{,!(node_modules)/**/}*.test.js' | faucet",
+    "start": "export $(cat .env | xargs); node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.10.1",
+    "xo": "^0.24.0"
+  },
+  "xo": {
+    "space": true,
+    "semicolon": false,
+    "rules": {
+      "indent": [
+        "error",
+        2,
+        {
+          "ignoredNodes": [
+            "ConditionalExpression"
+          ]
+        }
+      ],
+      "operator-linebreak": [
+        "error",
+        "after",
+        {
+          "overrides": {
+            "?": "before",
+            ":": "before",
+            "||": "before"
+          }
+        }
+      ]
+    }
+  }
+}
